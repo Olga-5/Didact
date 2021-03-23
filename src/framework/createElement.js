@@ -3,15 +3,17 @@ const createTextElement = (value) => ({
   props: {
     nodeValue: value,
     children: [],
-  }
-})
+  },
+});
 
 const createElement = (tag, props, ...children) => ({
   type: tag,
   props: {
     ...props,
-    children: children.map((child) => typeof child === 'object' ? child : createTextElement(child)),
-  }
+    children: children.map((child) =>
+      typeof child === 'object' ? child : createTextElement(child),
+    ),
+  },
 });
 
 export default createElement;

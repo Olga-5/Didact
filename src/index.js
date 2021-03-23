@@ -1,3 +1,4 @@
+/* eslint-disable react/no-deprecated */
 /** @jsxRuntime classic */
 /** @jsx Didact.createElement */
 
@@ -6,21 +7,23 @@ import Didact from './framework';
 const element = (
   <div id="example">
     <h1>Hello</h1>
-    <b />
-    <p><i>How are you doing?</i></p>
+    <hr />
+    <p>
+      <i>How are you doing?</i>
+    </p>
   </div>
 );
-        // ||
-        // \/
+// ||
+// \/
 // const element = Didact.createElement(
 //   'div',
 //   { id: 'example' },
 //   Didact.createElement('h1', null, 'Hello'),
-//   Didact.createElement('b', null),
+//   Didact.createElement('hr', null),
 //   Didact.createElement('p', null, Didact.createElement('i', null, 'How are you doing?')),
 // )
-        // ||
-        // \/
+// ||
+// \/
 // const element = ({
 //   type: 'div',
 //   props: {
@@ -33,7 +36,7 @@ const element = (
 //         },
 //       },
 //       {
-//         type: 'b',
+//         type: 'hr',
 //         prop: {
 //           children: [],
 //         },
@@ -55,8 +58,5 @@ const element = (
 //   }
 // })
 
-// const container = document.getElementById('root');
-
-// Didact.render(element, container);
-
-console.log(element);
+const container = document.getElementById('root');
+Didact.render(element, container);
